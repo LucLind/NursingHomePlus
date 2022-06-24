@@ -58,7 +58,7 @@ public class NewTreatmentController {
         Treatment treatment = new Treatment(patient.getPid(), date,
                 begin, end, description, remarks);
         createTreatment(treatment);
-        controller.readAllAndShowInTableView();
+        controller.readAllAndShowInTableView(patient.getPid());
         stage.close();
     }
 

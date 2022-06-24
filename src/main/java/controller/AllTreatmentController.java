@@ -66,14 +66,32 @@ public class AllTreatmentController {
     }
 
     public void readAllAndShowInTableView() {
-        this.tableviewContent.clear();
-        comboBox.getSelectionModel().select(0);
         this.dao = DAOFactory.getDAOFactory().createTreatmentDAO();
+        comboBox.getSelectionModel().select(0);
+        this.tableviewContent.clear();
         List<Treatment> allTreatments;
         try {
             allTreatments = dao.readAll();
             for (Treatment treatment : allTreatments) {
                 this.tableviewContent.add(treatment);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void readAllAndShowInTableView(long index) {
+        this.dao = DAOFactory.getDAOFactory().createTreatmentDAO();
+        comboBox.getSelectionModel().select(0);
+        this.tableviewContent.clear();
+        List<Treatment> allTreatments;
+        try {
+            allTreatments = dao.readAll();
+            for (Treatment treatment : allTreatments) {
+                if (treatment.getPid() == index) {
+                    this.tableviewContent.add(treatment);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

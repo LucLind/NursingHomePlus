@@ -13,47 +13,43 @@ public class Patient extends Person {
     private LocalDate dateOfBirth;
     private String careLevel;
     private String roomnumber;
-    private String assets;
     private List<Treatment> allTreatments = new ArrayList<Treatment>();
 
     /**
      * constructs a patient from the given params.
-     * @param firstName
-     * @param surname
-     * @param dateOfBirth
-     * @param careLevel
-     * @param roomnumber
-     * @param assets
+     * @param firstName the first name
+     * @param surname the surname
+     * @param dateOfBirth the date of birth
+     * @param careLevel the care level
+     * @param roomnumber the roomnumber
      */
-    public Patient(String firstName, String surname, LocalDate dateOfBirth, String careLevel, String roomnumber, String assets) {
+    public Patient(String firstName, String surname, LocalDate dateOfBirth, String careLevel, String roomnumber) {
         super(firstName, surname);
         this.dateOfBirth = dateOfBirth;
         this.careLevel = careLevel;
         this.roomnumber = roomnumber;
-        this.assets = assets;
+
     }
 
     /**
      * constructs a patient from the given params.
-     * @param pid
-     * @param firstName
-     * @param surname
-     * @param dateOfBirth
-     * @param careLevel
-     * @param roomnumber
-     * @param assets
+     * @param pid the pid
+     * @param firstName the first name
+     * @param surname the surname
+     * @param dateOfBirth the date of birth
+     * @param careLevel the care level
+     * @param roomnumber the roomnumber
      */
-    public Patient(long pid, String firstName, String surname, LocalDate dateOfBirth, String careLevel, String roomnumber, String assets) {
+    public Patient(long pid, String firstName, String surname, LocalDate dateOfBirth, String careLevel, String roomnumber) {
         super(firstName, surname);
         this.pid = pid;
         this.dateOfBirth = dateOfBirth;
         this.careLevel = careLevel;
         this.roomnumber = roomnumber;
-        this.assets = assets;
     }
 
     /**
-     *
+     * Getter for the pid
      * @return patient id
      */
     public long getPid() {
@@ -61,7 +57,7 @@ public class Patient extends Person {
     }
 
     /**
-     *
+     * Getter for the birth date
      * @return date of birth as a string
      */
     public String getDateOfBirth() {
@@ -78,15 +74,15 @@ public class Patient extends Person {
     }
 
     /**
-     *
-     * @return careLevel
+     * Getter for the care level
+     * @return the careLevel
      */
     public String getCareLevel() {
         return careLevel;
     }
 
     /**
-     *
+     * Setter for the care level
      * @param careLevel new care level
      */
     public void setCareLevel(String careLevel) {
@@ -94,7 +90,7 @@ public class Patient extends Person {
     }
 
     /**
-     *
+     * Getter for the room number
      * @return roomNumber as string
      */
     public String getRoomnumber() {
@@ -102,32 +98,17 @@ public class Patient extends Person {
     }
 
     /**
-     *
-     * @param roomnumber
+     * Setter for the room number
+     * @param roomnumber the roomnumber
      */
     public void setRoomnumber(String roomnumber) {
         this.roomnumber = roomnumber;
     }
 
-    /**
-     *
-     * @return assets as string
-     */
-    public String getAssets() {
-        return assets;
-    }
-
-    /**
-     *
-     * @param assets
-     */
-    public void setAssets(String assets) {
-        this.assets = assets;
-    }
 
     /**
      * adds a treatment to the treatment-list, if it does not already contain it.
-     * @param m Treatment
+     * @param m the treatment
      * @return true if the treatment was not already part of the list. otherwise false
      */
     public boolean add(Treatment m) {
@@ -139,17 +120,16 @@ public class Patient extends Person {
     }
 
     /**
-     *
+     * turns the patient model to a string.
      * @return string-representation of the patient
      */
     public String toString() {
         return "Patient" + "\nMNID: " + this.pid +
                 "\nFirstname: " + this.getFirstName() +
                 "\nSurname: " + this.getSurname() +
-                "\nBirthday: " + this.dateOfBirth +
-                "\nCarelevel: " + this.careLevel +
-                "\nRoomnumber: " + this.roomnumber +
-                "\nAssets: " + this.assets +
+                "\nBirthday: " + this.getDateOfBirth() +
+                "\nCarelevel: " + this.getCareLevel() +
+                "\nRoomnumber: " + this.getRoomnumber() +
                 "\n";
     }
 }

@@ -4,22 +4,32 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+
 <BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="688.0" prefWidth="926.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
-   <left>
-      <VBox id="vBox" alignment="CENTER" spacing="50.0" styleClass="vBox" stylesheets="@Application.css" BorderPane.alignment="CENTER">
+   <bottom>
+      <HBox id="hBox" alignment="CENTER" spacing="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="926.0" styleClass="hBox" stylesheets="@Application.css" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleShowAllPatient" prefWidth="105.0" text="Patienten/innen">
-               <VBox.margin>
-                  <Insets bottom="50.0" left="10.0" right="10.0" top="50.0" />
-               </VBox.margin>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleShowAllCaregiver" styleClass="button" stylesheets="@Application.css" prefWidth="200.0" text="Pfleger*Innen">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" top="5.0" />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleShowAllPatient" styleClass="button" stylesheets="@Application.css" prefWidth="200.0" text="Patient*Innen">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" top="5.0" />
+               </HBox.margin>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleShowAllTreatments" prefWidth="105.0" text="Behandlungen">
-               <VBox.margin>
-                  <Insets bottom="50.0" left="10.0" right="10.0" top="50.0" />
-               </VBox.margin></Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleShowAllTreatments" styleClass="button" stylesheets="@Application.css" prefWidth="200.0" text="Behandlungen">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </HBox.margin>
+            </Button>
          </children>
-      </VBox>
-   </left>
+      </HBox>
+   </bottom>
 </BorderPane>
